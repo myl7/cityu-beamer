@@ -1,0 +1,119 @@
+\documentclass[aspectratio=169,12pt]{beamer}
+\usetheme[progressbar=foot]{moloch}
+\usecolortheme{default}
+
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+\usepackage{transparent}
+% Attempt to make hyperref and algorithmic work together better:
+\newcommand{\theHalgorithm}{\arabic{algorithm}}
+
+% Add logo to the top right corner of each slide with transparency
+% If used in production, replace logo.png with "template/logo.png"
+\logo{\transparent{0.1}\includegraphics[height=0.75cm]{logo.png}\vspace*{-0.35cm}\hspace*{0.2cm}}
+
+% Custom block styling
+\setbeamertemplate{blocks}[rounded][shadow=false]
+\setbeamercolor{block title}{fg=orange,bg=orange!15}
+\setbeamercolor{block body}{fg=black,bg=orange!10}
+
+\setbeamerfont{block title}{size=\small,series=\normalfont}
+
+% Disable section pages
+\AtBeginSection{}
+
+\makeatletter
+% Configure frametitle to include section name
+\setbeamertemplate{frametitle}{%
+  \nointerlineskip
+  \begin{beamercolorbox}[sep=0.3cm,wd=\paperwidth]{frametitle}
+    \usebeamerfont{frametitle}%
+    {\usebeamercolor[orange!65]{normal text} \footnotesize\insertsectionhead\par}
+    \insertframetitle\strut\par%
+  \end{beamercolorbox}
+}
+\makeatother
+
+\title{Your Main Title Here}
+\subtitle{A more detailed subtitle}
+\author{Wenbo Pan}
+\date{\today}
+
+\begin{document}
+
+\begin{frame}
+    \titlepage
+\end{frame}
+
+\begin{frame}{Table of Contents}
+    \tableofcontents
+\end{frame}
+
+\section{Introduction}
+\begin{frame}{Introduction}
+    \begin{itemize}
+        \item Main point 1
+        \item \textbf{Key Points:} 
+        \begin{itemize}
+            \item Sub-point A
+            \item Sub-point B
+        \end{itemize}
+        \item Main point 2
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Section With Image}
+    \framesubtitle{Optional Subtitle}
+    \begin{figure}
+        \includegraphics[width=\columnwidth,height=0.65\textheight,keepaspectratio]{example-image}
+        \caption{Your caption here}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Section With Math}
+    \framesubtitle{Optional Subtitle}
+    \begin{itemize}
+        \item Mathematical expression:
+            \[
+            f(x) = \sum_{i=1}^{n} x_i
+            \]
+        \item Explanation of the formula
+    \end{itemize}
+\end{frame}
+
+\section{Results and Conclusion}
+\begin{frame}{Section With Table}
+    \begin{table}
+        \resizebox{\textwidth}{!}{
+        \begin{tabular}{lccc}
+            \toprule
+            Header 1 & Header 2 & Header 3 & Header 4 \\
+            \midrule
+            Value 1 & Value 2 & Value 3 & Value 4 \\
+            Value 5 & Value 6 & Value 7 & Value 8 \\
+            \bottomrule
+        \end{tabular}
+        }
+        \caption{Your table caption here}
+    \end{table}
+\end{frame}
+
+\begin{frame}{Conclusion}
+    \begin{itemize}
+        \item \textbf{Key Finding 1:}
+        \begin{itemize}
+            \item Supporting detail A by \emph{Stop Reasoning}\footnote{Wang, Zefeng, et al. "Stop reasoning! when multimodal llms with chain-of-thought reasoning meets adversarial images." arXiv (2024).}
+            \item Supporting detail B
+        \end{itemize} \pause
+        \item \textbf{Key Finding 2:}
+        \begin{itemize}
+            \item Supporting detail C
+            \item Supporting detail D
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\end{document}
